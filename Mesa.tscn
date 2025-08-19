@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://df1ec8b1losqd"]
+
+[ext_resource type="Script" uid="uid://bulemy1lw3sot" path="res://mesa.gd" id="1_7r4hx"]
+[ext_resource type="Texture2D" uid="uid://d08nsy7iflhjb" path="res://Mesa spawn.png" id="2_7r4hx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
+size = Vector2(712.117, 499.032)
+
+[node name="Mesa" type="Node2D"]
+visible = false
+script = ExtResource("1_7r4hx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0.146931, 0.102548, 0.167105, 1)
+
+[node name="Mesa desing" type="Node2D" parent="."]
+position = Vector2(574, 312)
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Mesa desing"]
+position = Vector2(-1.66665, 6.00002)
+scale = Vector2(1, 0.985026)
+texture = ExtResource("2_7r4hx")
+
+[node name="SpanwArea" type="Area2D" parent="."]
+position = Vector2(574, 274)
+scale = Vector2(0.695, 0.695)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpanwArea"]
+position = Vector2(-1.43887, -2.87769)
+scale = Vector2(0.886, 0.914)
+shape = SubResource("RectangleShape2D_80nbo")
+
+[node name="LblScore" type="Label" parent="."]
+offset_left = 505.0
+offset_top = 35.0
+offset_right = 634.0
+offset_bottom = 67.0
+text = "Aqui ire el score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinRoot" type="Node2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.83
+autostart = true
