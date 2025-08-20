@@ -1,7 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1bm7ydscps8v"]
+[gd_scene load_steps=6 format=3 uid="uid://c1bm7ydscps8v"]
 
 [ext_resource type="Texture2D" uid="uid://qoy236rogb1c" path="res://coin.png" id="1_hgpxo"]
 [ext_resource type="Script" uid="uid://d1xfii42m245s" path="res://CoinEmiter.gd" id="1_xbtkx"]
+
+[sub_resource type="Gradient" id="Gradient_xbtkx"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.3, 1)
+colors = PackedColorArray(0.147672, 0.147672, 0.147672, 1, 0.18359, 0.18359, 0.18359, 1, 0.184314, 0.184314, 0.184314, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g1j10"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_xbtkx")
+fill = 1
+fill_from = Vector2(0.512821, 0.504274)
+fill_to = Vector2(0.179487, 0.0982906)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbtkx"]
 radius = 22.0
@@ -9,12 +22,16 @@ radius = 22.0
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_xbtkx")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -30.0
+offset_top = -5.0
+offset_right = 21.0
+offset_bottom = 23.0
+texture = SubResource("GradientTexture2D_g1j10")
+expand_mode = 2
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0495228, 0.0456814)
-texture = ExtResource("1_hgpxo")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(0.00245251, 0.00208679)
 texture = ExtResource("1_hgpxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
